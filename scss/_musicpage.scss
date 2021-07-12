@@ -1,0 +1,186 @@
+#musicpage {
+    height: 100%;
+    width: 100%;
+    // background-color: $colorBg;
+    padding-top: 80px;
+
+    .song-info {
+        text-align: center;
+        color: $white;
+
+        p:nth-child(2) {
+            margin-bottom: 10px;
+        }
+
+        .song-img {
+            margin: 0 auto;
+            object-fit: cover;
+            height: 120px;
+            width: 180px;
+            border-radius: 20px;
+            // background-image: url('../images/songpage/img.png');
+            // background-position: center center;
+            // background-size: cover;
+            // background-repeat: no-repeat;
+
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            margin-bottom: 5px;
+            color: $colorPrimary;
+        }
+    }
+
+    .recommend {
+        // width: 250px;
+        // height: 280px;
+        // width: 80%;
+        height: calc(100% - 290px);
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        margin-bottom: 30px;
+
+        .recommend-toggle {
+            width: 40px;
+            height: 25px;
+            background-color: $white;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            padding: 2px;
+
+            .circle {
+                height: 20px;
+                width: 20px;
+                border-radius: 50%;
+                background-color: $colorPrimary;
+                transition: .2s;
+                position: relative;
+                left: 0px;
+            }
+        }
+
+        .similar-artists {
+            //height: 400px;
+            font-size: .9rem;
+            padding: 0 20px 20px 20px;
+            text-align: center;
+            overflow: auto;
+            color: $grayLight;
+            width: 250px;
+
+            transition: .2s;
+            transition-timing-function: ease-in;
+
+            display: flex;
+            flex-wrap: wrap;
+
+            div {
+                padding: 10px;
+                margin-bottom: 8px;
+                height: 50px;
+                //background-color: rgba($color: $colorPrimary, $alpha: 0.8);
+                border: 1px solid $colorPrimary;
+                color: $grayLight;
+                border-radius: 10px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                p {
+                    pointer-events: none;
+                }
+            }
+        }
+
+        .recommend-songs {
+            //height: 400px;
+            font-size: .9rem;
+            padding: 0 20px 20px 20px;
+            // text-align: left;
+            overflow: auto;
+            // white-space: nowrap;
+            color: $grayLight;
+            width: 300px;
+
+            transition: .2s;
+            transition-timing-function: ease-in;
+
+            .text-color {
+                color: white;
+            }
+
+            .song {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: $grayLight;
+
+                // &:first-child p {
+                //     color: $white;
+                //     // background-color: $colorPrimary;
+                //     // border-radius: 8px;
+                // }
+
+                p {
+                    // white-space: normal;
+                    pointer-events: none;
+                    text-align: left;
+                    padding: 10px;
+                    // color: $grayLight;
+                }
+
+                .song-fav {
+                    font-size: 18px;
+                    color: $colorPrimary;
+                }
+            }
+
+
+        }
+    }
+
+    .settings {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        padding: 25px;
+        // border-left: 6px solid $colorPrimary;
+        // background-color: $colorBg;
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+            .prev, .next {
+                font-size: 1.4rem;
+                color: $grayLight;
+            }
+
+            .play {
+                font-size: 1.7rem;
+                color: $white;
+                background-color: $colorPrimary;
+                height: 55px;
+                width: 55px;
+                border-radius: 50%;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                i {
+                    position: relative;
+                    
+                }
+            }
+        }
+    }
+}

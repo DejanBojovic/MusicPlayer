@@ -1,0 +1,635 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  letter-spacing: .3px;
+}
+
+body {
+  height: 100vh !important;
+  font-family: 'Roboto', sans-serif;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#24313f), to(rgba(36, 49, 63, 0.6))), url("../images/bg-3.jpg");
+  background-image: linear-gradient(to bottom, #24313f, rgba(36, 49, 63, 0.6)), url("../images/bg-3.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #24313f;
+}
+
+body .line {
+  width: 100vw;
+  height: 6px;
+  background-color: #f1324f;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+body .loader {
+  z-index: 10;
+  border: 6px solid #35404d;
+  /* Light grey */
+  border-top: 6px solid #f1324f;
+  /* Blue */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 1.8s linear infinite;
+          animation: spin 1.8s linear infinite;
+  position: absolute;
+  bottom: 30%;
+  left: 45%;
+  display: none;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+body .nav {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 25px;
+}
+
+body .nav i {
+  font-size: 1.8rem;
+  color: #f1324f;
+}
+
+body .nav p {
+  color: #fff;
+}
+
+body .menu {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  overflow: hidden;
+  background-color: rgba(36, 49, 63, 0.9);
+  border-top: 6px solid #f1324f;
+  color: #f1324f;
+  -webkit-transition: .3s;
+  transition: .3s;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .menu .close-menu {
+  font-size: 2.5rem;
+  position: absolute;
+  top: 25px;
+}
+
+body .menu .menu-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  position: relative;
+  top: 25px;
+}
+
+body .menu .menu-bottom .menu-home,
+body .menu .menu-bottom .menu-user,
+body .menu .menu-bottom .menu-music {
+  width: 65%;
+  padding: 20px;
+  border: 2px solid #f1324f;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+body .menu .menu-bottom .menu-home p,
+body .menu .menu-bottom .menu-user p,
+body .menu .menu-bottom .menu-music p {
+  letter-spacing: 1.5px;
+}
+
+body .menu .menu-bottom .menu-home,
+body .menu .menu-bottom .menu-music {
+  margin-bottom: 15px;
+}
+
+#homepage {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#homepage .info-text {
+  padding: 0 25px;
+  position: relative;
+  bottom: 50px;
+}
+
+#homepage .info-text h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 15px;
+  letter-spacing: .8px;
+}
+
+#homepage .info-text p {
+  color: #ccc;
+  text-align: center;
+}
+
+#homepage .search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#homepage .search .homepage-input {
+  padding: 8px 8px;
+  border: 1px solid #f1324f;
+  border-radius: 20px;
+  background-color: transparent;
+}
+
+#homepage .search .homepage-input input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  background-color: transparent;
+  color: #fff;
+}
+
+#homepage .search .homepage-input input::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+#homepage .search .homepage-input input:-ms-input-placeholder {
+  color: #ccc;
+}
+
+#homepage .search .homepage-input input::-ms-input-placeholder {
+  color: #ccc;
+}
+
+#homepage .search .homepage-input input::placeholder {
+  color: #ccc;
+}
+
+#homepage .search .homepage-input i {
+  padding-right: 6px;
+  color: #fff;
+}
+
+#homepage .search .search-type {
+  padding: 15px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  color: #ccc;
+}
+
+#homepage .search .search-type p {
+  padding: 3px;
+  border-bottom: 3px solid transparent;
+}
+
+#homepage .search .search-type p:first-child {
+  border-color: #f1304d;
+}
+
+#homepage .search-error {
+  position: absolute;
+  bottom: 30%;
+  text-align: center;
+  padding: 0 60px;
+  color: #ccc;
+  display: none;
+}
+
+#musicpage {
+  height: 100%;
+  width: 100%;
+  padding-top: 80px;
+}
+
+#musicpage .song-info {
+  text-align: center;
+  color: #fff;
+}
+
+#musicpage .song-info p:nth-child(2) {
+  margin-bottom: 10px;
+}
+
+#musicpage .song-info .song-img {
+  margin: 0 auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 120px;
+  width: 180px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+#musicpage .song-info h3 {
+  margin-bottom: 5px;
+  color: #f1324f;
+}
+
+#musicpage .recommend {
+  height: calc(100% - 290px);
+  padding: 20px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 30px;
+}
+
+#musicpage .recommend .recommend-toggle {
+  width: 40px;
+  height: 25px;
+  background-color: #fff;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  padding: 2px;
+}
+
+#musicpage .recommend .recommend-toggle .circle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #f1324f;
+  -webkit-transition: .2s;
+  transition: .2s;
+  position: relative;
+  left: 0px;
+}
+
+#musicpage .recommend .similar-artists {
+  font-size: .9rem;
+  padding: 0 20px 20px 20px;
+  text-align: center;
+  overflow: auto;
+  color: #ccc;
+  width: 250px;
+  -webkit-transition: .2s;
+  transition: .2s;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#musicpage .recommend .similar-artists div {
+  padding: 10px;
+  margin-bottom: 8px;
+  height: 50px;
+  border: 1px solid #f1324f;
+  color: #ccc;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#musicpage .recommend .similar-artists div p {
+  pointer-events: none;
+}
+
+#musicpage .recommend .recommend-songs {
+  font-size: .9rem;
+  padding: 0 20px 20px 20px;
+  overflow: auto;
+  color: #ccc;
+  width: 300px;
+  -webkit-transition: .2s;
+  transition: .2s;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+}
+
+#musicpage .recommend .recommend-songs .text-color {
+  color: white;
+}
+
+#musicpage .recommend .recommend-songs .song {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #ccc;
+}
+
+#musicpage .recommend .recommend-songs .song p {
+  pointer-events: none;
+  text-align: left;
+  padding: 10px;
+}
+
+#musicpage .recommend .recommend-songs .song .song-fav {
+  font-size: 18px;
+  color: #f1324f;
+}
+
+#musicpage .settings {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 25px;
+}
+
+#musicpage .settings .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#musicpage .settings .buttons .prev, #musicpage .settings .buttons .next {
+  font-size: 1.4rem;
+  color: #ccc;
+}
+
+#musicpage .settings .buttons .play {
+  font-size: 1.7rem;
+  color: #fff;
+  background-color: #f1324f;
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#musicpage .settings .buttons .play i {
+  position: relative;
+}
+
+#userpage {
+  height: 100%;
+  width: 100%;
+  padding-top: 80px;
+}
+
+#userpage .avatar {
+  font-size: 4.5rem;
+  color: #f1324f;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#userpage .userpage-input {
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  padding: 8px 0px 8px 8px;
+  border: 1px solid #f1324f;
+  border-radius: 20px;
+  background-color: transparent;
+}
+
+#userpage .userpage-input input {
+  width: 80%;
+  border: none;
+  outline: none;
+  padding: 5px;
+  background-color: transparent;
+  color: #fff;
+}
+
+#userpage .userpage-input input::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+#userpage .userpage-input input:-ms-input-placeholder {
+  color: #ccc;
+}
+
+#userpage .userpage-input input::-ms-input-placeholder {
+  color: #ccc;
+}
+
+#userpage .userpage-input input::placeholder {
+  color: #ccc;
+}
+
+#userpage .userpage-input i {
+  color: #fff;
+}
+
+#userpage .favorites {
+  color: #ccc;
+  padding: 0 50px;
+  height: calc(100% - 310px);
+  overflow: auto;
+  margin: 0 auto;
+}
+
+#userpage .favorites .fav-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+#userpage .favorites .fav-item .fav-item-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#userpage .favorites .fav-item .fav-item-left img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  margin-right: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#userpage .favorites .fav-item .fav-item-left p, #userpage .favorites .fav-item .fav-item-left span {
+  pointer-events: none;
+  word-wrap: normal;
+  font-size: 0.8rem;
+  padding-right: 15px;
+}
+
+#userpage .favorites .fav-item .fav-item-left span {
+  padding: 0;
+}
+
+#userpage .favorites .fav-item .userpage-fav {
+  font-size: 18px;
+  color: #f1324f;
+}
+
+#userpage .settings-user {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 25px;
+}
+
+#userpage .settings-user .buttons-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#userpage .settings-user .buttons-user .prev-user, #userpage .settings-user .buttons-user .next-user {
+  font-size: 1.4rem;
+  color: #ccc;
+}
+
+#userpage .settings-user .buttons-user .play-user {
+  font-size: 1.7rem;
+  color: #fff;
+  background-color: #f1324f;
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#userpage .settings-user .buttons-user .play-user i {
+  position: relative;
+}
+/*# sourceMappingURL=style.css.map */

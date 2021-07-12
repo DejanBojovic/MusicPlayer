@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="noreferrer" content="origin">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">  
+
+    <title>Music Player</title>
+
+    <link rel="stylesheet" href="scss/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+    <div class="line"></div>
+
+    <div class="loader"></div>
+
+    <div class="nav">
+        <i class="fas fa-compact-disc"></i>
+        <i class="menu-btn fas fa-ellipsis-h"></i>
+    </div>
+
+    <div class="menu">
+        <i class="close-menu fas fa-angle-down"></i>
+
+        <div class="menu-bottom">
+            <div class="menu-home">
+                <p>Home</p>  
+            </div>
+            <div class="menu-user">
+                <p>User</p>
+            </div>
+        </div>
+
+    </div>
+
+    <section id="homepage">
+    
+        <div class="info-text">
+            <h1>Discover new music or listen to your favorite artists!</h1>
+        </div>
+    
+        <div class="search">
+            <div class="homepage-input">
+                <input type="text" class="homepage-search" placeholder="Search for artist.." >
+                <i class="homepage-search-btn fas fa-search"></i>
+            </div>
+        </div>
+
+        <p class="search-error">The artist you supplied could not be found!</p>
+    </section>
+
+    <section id="musicpage">
+        <div id="player" style="display: none;"></div>
+
+        <!-- <iframe width="560" height="315" src="https://www.youtube.com/watch?v=TLV4_xaYynY" title="YouTube video player" 
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+
+        <div class="song-info">
+            <img src="" alt="" class="song-img">
+            <h3 class="song-playing">Castle On The Hill</h3>
+            <p class="searched-artist">Ed Sheeran</p>
+        </div>
+
+        <div class="recommend">
+            <div class="recommend-toggle">
+                <div class="circle" style="left: 0px;"></div>
+            </div>
+
+            <div class="similar-artists">
+
+            </div>
+
+            <div class="recommend-songs">
+
+            </div>
+        </div>
+
+        <div class="settings">
+            <div class="buttons">
+                <i class="prev fas fa-backward"></i>
+
+                <div class="play">
+                    <i class="fas fa-play"></i>
+                </div>
+
+                <i class="next fas fa-forward"></i>
+            </div>
+        </div>        
+    </section>
+
+    <section id="userpage">
+
+        <div class="avatar">
+            <i class="fas fa-user-circle"></i>
+        </div>
+
+        <div class="userpage-input">
+            <input type="text" class="user-input" placeholder="Search favorites..">
+        </div>
+
+        <div class="favorites">
+            
+        </div>
+
+        <div class="settings-user">
+            <div class="buttons-user">
+                <i class="prev-user fas fa-backward"></i>
+
+                <div class="play-user">
+                    <i class="fas fa-play"></i>
+                </div>
+
+                <i class="next-user fas fa-forward"></i>
+            </div>
+        </div>  
+    </section>
+
+
+    <script type="module" src="src/home.js"></script>
+    <script src="src/music.js"></script>
+    <script type="module" src="src/user.js"></script>
+</body>
+</html>

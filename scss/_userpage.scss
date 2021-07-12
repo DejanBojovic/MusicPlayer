@@ -1,0 +1,128 @@
+#userpage {
+    height: 100%;
+    width: 100%;
+    // background-color: $colorBg;
+    padding-top: 80px;
+
+    .avatar {
+        font-size: 4.5rem;
+        color: $colorPrimary;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .userpage-input {
+        width: 200px;
+        margin: 0 auto;
+        margin-bottom: 40px;
+        padding: 8px 0px 8px 8px;
+        border: 1px solid $colorPrimary;
+        border-radius: 20px;
+        background-color: transparent;
+
+        input {
+            width: 80%;
+            border: none;
+            outline: none;
+            padding: 5px;
+            background-color: transparent;
+            color: $white;
+
+            &::placeholder {
+                color: $grayLight;
+            }
+        }
+
+        i {
+            color: $white;
+        }
+    }
+
+    .favorites {
+        color: $grayLight;
+        // width: 300px;
+        padding: 0 50px;
+        // height: 340px;
+        height: calc(100% - 310px);
+        overflow: auto;
+        margin: 0 auto;
+
+        .fav-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            position: relative;
+
+            .fav-item-left {
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    margin-bottom: 10px;
+                    margin-right: 8px;
+                    object-fit: cover;
+                }
+    
+                p, span {
+                    pointer-events: none;
+                    word-wrap: normal;
+                    font-size: 0.8rem;
+                    padding-right: 15px;
+                }
+
+                span {
+                    padding: 0;
+                }
+            }
+
+
+            .userpage-fav {
+                font-size: 18px;
+                color: $colorPrimary;
+            }
+        }
+        
+    }
+
+
+    .settings-user {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        padding: 25px;
+        // border-left: 6px solid $colorPrimary;
+        // background-color: $colorBg;
+
+        .buttons-user {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+            .prev-user, .next-user {
+                font-size: 1.4rem;
+                color: $grayLight;
+            }
+
+            .play-user {
+                font-size: 1.7rem;
+                color: $white;
+                background-color: $colorPrimary;
+                height: 55px;
+                width: 55px;
+                border-radius: 50%;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                i {
+                    position: relative;
+                    
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,149 @@
+$colorBg: #24313f;
+$colorPrimary: #f1324f;
+$grayDark: #35404d;
+$grayLight: #ccc;
+$white: #fff;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: .3px;
+}
+
+body {
+    height: 100vh !important;
+    font-family: 'Roboto', sans-serif;
+    background-image: linear-gradient(to bottom,rgba(36, 49, 63, 1), rgba(36, 49, 63, .6)), url('../images/bg-3.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: $colorBg;
+
+    .line {
+        // width: 6px;
+        // height: 100vh;
+        width: 100vw;
+        height: 6px;
+        background-color: $colorPrimary;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 2;
+    }
+
+    .loader {
+        z-index: 10;
+        border: 6px solid $grayDark; /* Light grey */
+        border-top: 6px solid $colorPrimary; /* Blue */
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1.8s linear infinite;
+
+        position: absolute;
+        // top: 2.5%;
+        bottom: 30%;
+        left: 45%;
+
+        display: none;
+    }
+      
+    @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+    }
+    
+    .nav {
+        position: absolute;
+        top: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 25px;
+    
+        i {
+            font-size: 1.8rem;
+            color: $colorPrimary;
+        }
+        
+        p {
+            color: $white;
+        }
+    }
+    
+    .menu {
+        height: 0%;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        z-index: 10;
+        overflow: hidden;
+        background-color: rgba($color: $colorBg, $alpha: .9);
+        border-top: 6px solid $colorPrimary;
+        color: $colorPrimary; 
+        transition: .3s;
+
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .close-menu {
+            font-size: 2.5rem;
+            position: absolute;
+            top: 25px;
+        }
+
+        .menu-bottom {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+            position: relative;
+            top: 25px;
+
+            .menu-home,
+            .menu-user,
+            .menu-music {
+                width: 65%;
+                // margin-bottom: 5px;
+                padding: 20px;
+                border: 2px solid $colorPrimary;
+                border-radius: 15px;
+                text-align: center;
+                font-weight: 600;
+                font-size: 1.2rem;
+
+                // border-left: none;
+                // border-right: none;
+
+                p {
+                    letter-spacing: 1.5px;
+                }
+                
+            }
+
+            .menu-home,
+            .menu-music {
+                // border-bottom: none;
+                // border-right: none;
+                // border-left: none;
+                //border-top: 2px solid $colorPrimary;
+                margin-bottom: 15px;
+
+            }
+        }
+    }
+}
+
+
+@import "./_homepage";
+@import "./_musicpage";
+@import "./_userpage";
