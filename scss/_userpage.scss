@@ -39,7 +39,7 @@
     }
 
     .favorites {
-        color: $grayLight;
+        //color: $grayLight;
         // width: 300px;
         padding: 0 50px;
         // height: 340px;
@@ -57,6 +57,7 @@
             .fav-item-left {
                 display: flex;
                 align-items: center;
+                color: $grayLight;
 
                 img {
                     width: 50px;

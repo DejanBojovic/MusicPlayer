@@ -104,24 +104,43 @@ searchBtn.addEventListener('click', () => {
 
     // after 2s this function activates
     setTimeout(() => {
-        // checking if the searched artist exists
-        // if not, music page wont load and error will be shown to the user
-        if(JSON.parse(localStorage.getItem('error'))) {
-            // set error from true to false
-            localStorage.setItem('error', JSON.stringify(false))
+        const error = JSON.parse(localStorage.getItem('error'))
+        if(error.isActive) {
+            error.isActive = false
+            localStorage.setItem('error', JSON.stringify(error))
 
-            // remove loader from the page
-            loader.style.display = 'none'
+            if(error.type === 'search') {
+                // checking if YT api limit has been exceeded 
+                // if yes, music page wont load and error will be shown to the user
+                // remove loader from the page
+                loader.style.display = 'none'
 
-            // show error message to the user, and hide it after 5s
-            const errorMessage = document.querySelector('.search-error')
-            errorMessage.style.display = 'block'
-            setTimeout(() => {
-                errorMessage.style.display = 'none'
-            }, 5000)
+                // show error message to the user, and hide it after 5s
+                const errorMessage = document.querySelector('.search-error')
+                errorMessage.style.display = 'block'
+                setTimeout(() => {
+                    errorMessage.style.display = 'none'
+                }, 5000)
 
-            // end this function and stop musicpage from loading
-            return
+                // end this function and stop musicpage from loading
+                return
+            } else {
+                // checking if the searched artist exists
+                // if not, music page wont load and error will be shown to the user
+                // remove loader from the page
+                loader.style.display = 'none'
+
+                // show error message to the user, and hide it after 5s
+                const errorMessage = document.querySelector('.limit-error')
+                errorMessage.style.display = 'block'
+                setTimeout(() => {
+                    errorMessage.style.display = 'none'
+                }, 5000)
+
+                // end this function and stop musicpage from loading
+                return
+            }
+
         }
 
         // if the artist existst, musicpage will be loaded and shown

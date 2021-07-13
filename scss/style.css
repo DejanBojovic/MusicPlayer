@@ -283,6 +283,15 @@ body .menu .menu-bottom .menu-music {
   display: none;
 }
 
+#homepage .limit-error {
+  position: absolute;
+  bottom: 30%;
+  text-align: center;
+  padding: 0 60px;
+  color: #ccc;
+  display: none;
+}
+
 #musicpage {
   height: 100%;
   width: 100%;
@@ -532,7 +541,6 @@ body .menu .menu-bottom .menu-music {
 }
 
 #userpage .favorites {
-  color: #ccc;
   padding: 0 50px;
   height: calc(100% - 310px);
   overflow: auto;
@@ -560,6 +568,7 @@ body .menu .menu-bottom .menu-music {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #ccc;
 }
 
 #userpage .favorites .fav-item .fav-item-left img {

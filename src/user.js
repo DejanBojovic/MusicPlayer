@@ -7,7 +7,6 @@ localStorage.setItem('loadingFavorites', JSON.stringify(false))
 
 const playBtnUserpage = document.querySelector('.play-user')
 playBtnUserpage.addEventListener('click', () => {
-    // console.log('playlista je - ' + player.getPlaylist())
     if(!JSON.parse(localStorage.getItem('playingFavorites'))) {
         // load playlist of favorites songs from userpage
         if(!JSON.parse(localStorage.getItem('loadingFavorites'))) {
@@ -30,7 +29,6 @@ playBtnUserpage.addEventListener('click', () => {
                 el.style.color = ''
             }
         })
-        //document.querySelector('.fav-item-left').style.color = '#fff'
     } else {
         localStorage.setItem('playingFavorites', JSON.stringify(false))
         player.pauseVideo()
@@ -51,7 +49,7 @@ document.querySelector('.next-user').addEventListener('click', () => {
     playBtnUserpage.children[0].classList.add('fa-pause')
     playBtnUserpage.children[0].style.left = '0'
 
-    currentPlayingSong('.fav-item-left p')
+    currentPlayingSong('.fav-item-left')
 })
 
 document.querySelector('.prev-user').addEventListener('click', () => {
@@ -64,5 +62,5 @@ document.querySelector('.prev-user').addEventListener('click', () => {
     playBtnUserpage.children[0].classList.add('fa-pause')
     playBtnUserpage.children[0].style.left = '0'
 
-    currentPlayingSong('.fav-item-left p')
+    currentPlayingSong('.fav-item-left')
 })

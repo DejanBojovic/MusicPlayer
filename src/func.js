@@ -9,6 +9,9 @@ export default function fetchForSongs(songs) {
         fetch(url)
         .then(res => res.json())
         .then(data => {
+            if(data.error) {
+                localStorage.setItem('error', JSON.stringify({type: 'limit', isActive: true}))
+            } 
             const playlist = JSON.parse(localStorage.getItem('playlist'))
 
             // putting all needed song info into a playlist array which is then submited to localStorage
@@ -37,7 +40,7 @@ export function fetchForArtistTopTracks(artistName) {
     .then(data => {
         // if error is returned in answer message is shown to the user that search could not be done
         if(data.error) {
-            localStorage.setItem('error', JSON.stringify(true))
+            localStorage.setItem('error', JSON.stringify({type: 'search', isActive: true}))
         } else {
             // if error is not returned, then array of top songs is passed as parameter to fetchForSongs function which gets all needed data from youtube and sets it in localStorage
             fetchForSongs(data.toptracks.track)
@@ -334,7 +337,7 @@ export function currentPlayingSong(clickedSong) {
                 el.style.color = '#fff'
             } else {
                 // other div color are set to gray
-                el.style.color = '#ccc'
+                el.style.color = ''
             }
         })
     }, 200)
@@ -404,7 +407,6 @@ function removeFavoriteFromUserpage() {
 
     // adding color on first playing song
     document.querySelectorAll('.fav-item-left').forEach(el => {
-        console.log(el)
         el.style.color = ''
     })
 }
