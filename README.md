@@ -1,6 +1,6 @@
 # MusicPlayer
 
-Predstavljanje aplikacije - 
+Predstavljanje aplikacije - https://www.youtube.com/watch?v=azZZ6TQrTok
 
 MusicPlayer je aplikacija koja omogucava pretragu izvodjaca, njihovih najpoznatijih pesama kao i izbor slicnih izvodjaca. 
 Korisnici mogu da da sacuvaju odredjene pesme, kao i da ih uklone. Za tu funkcionalnost se koristi localStorage, tako da su
